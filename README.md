@@ -32,6 +32,7 @@ The scenarios are written in Gherkin format and are grouped in 2 files (api_logi
 
 2.1. Prerequisites
 - download the test website locally from https://github.com/cypress-io/cypress-realworld-app
+- install Java from https://www.java.com/en/download/manual.jsp
 
 3. How to run the automated tests:
 
@@ -39,8 +40,13 @@ a. Wake up the Cypress local environment
 Go to the local test website folder (the cypress realworld app folder) and run yarn dev. Since the project includes API tests, wait for the backend (http://localhost:3001) to start.
 
 b. Start the Selenium server
-The Selenium standalone server file has been included in the project so it doesn't need to be downloaded agian.
-Within a terminal go to the current project (Cypress.io) and find the selenium .jar file within folder (Selenium_server). From the context of the selenium_server folder run java -jar selenium-server-standalone-3.5.0.jar
+The Selenium standalone server file has been included in the project so you don't need to be downloaded again.
+Within the terminal, go to the root folder that was downloaded from my git repository and find the selenium .jar file within the Selenium_server folder.
+```
+cd Selenium_server
+java -jar selenium-server-standalone-3.5.0.jar
+```
+
 
 c. Run the test with Behat
 Within a terminal go to the main project folder (vendor folder should be visible), an run the following command:
@@ -59,4 +65,8 @@ After finishing, more information about the run will be displayed:
 - the time of the run and how much memory has been used
 
 A video demo is included into the project (check the DEMO folder) to demonstrate the full process of running the tests.
+
+
+FAQ
+
 
