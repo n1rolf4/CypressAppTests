@@ -1,0 +1,14 @@
+{
+    "require": {
+        "behat/behat": "*",
+        "behat/mink": "*",
+        "guzzlehttp/guzzle": "*",
+        "behat/mink-selenium2-driver": "*",
+        "friends-of-behat/mink-extension": "*",
+        "behat/mink-browserkit-driver": "*",
+        "php-webdriver/webdriver":"*"
+    },
+    "autoload": {
+        "psr-0": { "Behat\\MinkExtension": "src/" }
+    }
+}
