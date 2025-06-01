@@ -31,11 +31,12 @@ The scenarios are written in Gherkin format and are grouped in 2 files (api_logi
 2. Install and setup steps
 
 2.1. Prerequisites
+- download the test website locally from https://github.com/cypress-io/cypress-realworld-app
 
 3. How to run the automated tests:
 
 a. Wake up the Cypress local environment
-Go to the folder where Cypress.io is set up and run yarn dev. Since the project includes API tests, wait for the backend(http://localhost:3001) to be up too.
+Go to the local test website folder (the cypress realworld app folder) and run yarn dev. Since the project includes API tests, wait for the backend (http://localhost:3001) to start.
 
 b. Start the Selenium server
 The Selenium standalone server file has been included in the project so it doesn't need to be downloaded agian.
