@@ -33,6 +33,14 @@ The scenarios are written in Gherkin format and are grouped in 2 files (api_logi
 2.1. Prerequisites
 - download the test website locally from https://github.com/cypress-io/cypress-realworld-app
 - install Java from https://www.java.com/en/download/manual.jsp
+- install Java SDK from https://www.oracle.com/ca-en/java/technologies/downloads/#jdk24-windows (I ran the application on Windows, so I downloaded the Windows version)
+- make sure to have the JAVA and JAVA JRE folders saved in the System environment variables - Environment Variables - System variables Path
+`C:\Program Files\Java\jdk-24\bin`
+`C:\Program Files (x86)\Java\latest\jre-1.8\bin`
+- clone my git repository from `git@github.com:n1rolf4/CypressAppTests.git`
+- install PHP from https://www.php.net/downloads.php then add the unarchived folder to the system environment variable PATH
+- install composer from https://getcomposer.org/download/ (when installing composer and asking you to choose the command-line PHP you want to use, make sure to use the above downloaded PHP path during the composer installation)
+- go to the root folder that was downloaded from my git repository and run `composer update`
 
 3. How to run the automated tests:
 
@@ -40,7 +48,7 @@ a. Wake up the Cypress local environment
 Go to the local test website folder (the cypress realworld app folder) and run yarn dev. Since the project includes API tests, wait for the backend (http://localhost:3001) to start.
 
 b. Start the Selenium server
-The Selenium standalone server file has been included in the project so you don't need to be downloaded again.
+The Selenium standalone server file has been included in the project so you don't need to download again.
 Within the terminal, go to the root folder that was downloaded from my git repository and find the selenium .jar file within the Selenium_server folder.
 ```
 cd Selenium_server
@@ -49,17 +57,18 @@ java -jar selenium-server-standalone-3.5.0.jar
 
 
 c. Run the test with Behat
-Within a terminal go to the main project folder (vendor folder should be visible), an run the following command:
-.\vendor\bin\behat that should run the entire suite of tests (api + functional).
+Within the terminal, go to the root folder that was downloaded from my git repository (vendor folder should be visible after running composer update), and run the following command:
+ 
+`.\vendor\bin\behat` it should run the entire suite of tests (api + functional).
 
-there are several other options that you can run the tests:
+there are several other options for running the tests:
 For example if you want to run only the API tests the following command should be run:
-.\vendor\bin\behat .\features\api_login.feature
+`.\vendor\bin\behat .\features\api_login.feature`
 
-similar for the functional tests:
-.\vendor\bin\behat .\features\UI_login.feature
+similarly for the functional tests:
+`.\vendor\bin\behat .\features\UI_login.feature`
 
-After finishing, more information about the run will be displayed:
+After finishing, more information about the tests will be displayed:
 - number of tests ran (how many have passed, failed or skipped if it is the case)
 - number of steps ran
 - the time of the run and how much memory has been used
@@ -69,4 +78,4 @@ A video demo is included into the project (check the DEMO folder) to demonstrate
 
 FAQ
 
-
+1. If the functional tests fail, then restart the selenium server.
